@@ -117,22 +117,12 @@ cm = confusion_matrix(y_test, y_pred)
 sns.heatmap(cm, annot=True)
 plt.show()
 
-"""## Salvar o classificador"""
-
-import pickle
-
-# Salvar o modelo treinado em disco
-with open('modelo_treinado.pkl', 'wb') as arquivo:
-    pickle.dump(mlp, arquivo)
 
 """##Aplicação Web"""
 
 import streamlit as st
 import pandas as pd
-import pickle
 
-# Carregando o modelo treinado
-model = pickle.load(open('modelo_treinado.pkl', 'rb'))
 
 # Título da página
 st.title('Predição de Rotatividade de Funcionários')
