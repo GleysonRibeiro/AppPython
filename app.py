@@ -12,9 +12,13 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import pickle
+import urllib.request
+
+url = "https://raw.githubusercontent.com/GleysonRibeiro/AppPython/main/modelo_treinado.pkl"
+filename, _ = urllib.request.urlretrieve(url)
 
 # Carregando o modelo treinado
-model = pickle.load(open('modelo_treinado.pkl', 'rb'))
+model = pickle.load(open(filename, 'rb'))
 
 # Título da página
 st.title('Predição de Rotatividade de Funcionários')
