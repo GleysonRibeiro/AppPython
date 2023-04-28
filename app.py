@@ -12,10 +12,10 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import pickle
-import urllib.request
+import os
 
-url = "https://raw.githubusercontent.com/GleysonRibeiro/AppPython/main/modelo_treinado.pkl"
-filename, _ = urllib.request.urlretrieve(url)
+filename = os.path.join(os.path.dirname(__file__), 'modelo_treinado.pkl')
+model = pickle.load(open(filename, 'rb'))
 
 # Carregando o modelo treinado
 model = pickle.load(open(filename, 'rb'))
